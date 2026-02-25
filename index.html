@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recherche Film - API OMDB</title>
+
+  <!--  fichier CSS pour le style -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- jQuery depuis en ligne -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>API OMDB - Recherche de films</h1>
+  
+  <!-- Carrousel d'images de films -->
+    <div id="movieCarousel" class="carousel-container">
+      <img id="carouselImage" src="" alt="Portrait de film" class="carousel-image" />
+    </div>
+  <h2>Recherche de films avec OMDB</h2>
+
+  <!-- Formulaire pour saisir le titre du film a rechercher -->
+  <form id="searchForm">
+    <!-- Grouper les champs afin de contrôler le rendu desktop (inline) vs mobile (stack) -->
+    <div class="form-row">
+      <label for="movieTitle" class="visually-hidden">Titre</label>
+      <input type="text" id="movieTitle" class="wide-input" placeholder="Entrez le titre du film" required />
+
+      <label for="movieYear" class="visually-hidden">Année (optionnel)</label>
+      <input type="number" id="movieYear" class="wide-input" placeholder="Année (ex: 1999)" min="1800" max="2027" />
+
+      <label for="movieType" class="visually-hidden">Type</label>
+      <select id="movieType" class="wide-input">
+        <option value="all">Tous les types</option>
+        <option value="movie">Film</option>
+        <option value="series">Série</option>
+      </select>
+      <button type="submit">Rechercher</button>
+    </div>
+  </form>
+
+  <!-- Zone ou les résultats de la recherche vont afficher -->
+  <section id="resultSection"></section>
+
+  <!-- JavaScript JQuery -->
+  <script src="script.js"></script>
+
+</body>
+</html>
